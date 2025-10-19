@@ -38,13 +38,14 @@ body{
   max-width:var(--max-width);
   margin:0 auto;
 }
+
 /* Header */
 .site-header {
   background: url("../images/light.png") no-repeat center center;
+  padding: 30px 40px;
   background-size: cover;
   background-position: center;
   transition: background 0.3s ease;
-  
 }
 
 /* Header nền cho dark mode */
@@ -60,17 +61,23 @@ body.dark-mode .site-header {
   justify-content: space-between; /* vẫn giữ hai đầu */
   align-items: center;
   width: 100%;
-  padding: 16px 40px; /* hoặc 20px nếu muốn logo gần hơn */
-  margin: 0; /* bỏ căn giữa */
+  padding: 40px 40px;
+  margin: 0;
   background: transparent;
   border-radius: 0;
   position: relative;
-  z-index: 2; /* đảm bảo nằm trên ảnh banner */
+  z-index: 2;
 }
 
-body.dark-mode .header-inner {
-  background: transparent;
-  border-radius: 0;
+/* --- Canh logo giữa header --- */
+.header-inner {
+  position: relative;
+}
+
+.header-inner .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Responsive banner */
@@ -86,26 +93,23 @@ body.dark-mode .header-inner {
   font-size:22px;
   letter-spacing:0.6px;
   color:var(--accent);
-}
-.logo{
   display: flex;
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  color: var(--accent);
   font-weight: 700;
   font-size: 22px;
 }
 
 .logo img {
-  width: 200px;   /* tăng / giảm tuỳ ý */
+  width: 200px;
   height: 180px;
 }
+
 .logo-text{
   font-size: 55px;
   letter-spacing: 0.5px;
 }
-
 
 /* Toggle */
 /* Toggle container */
@@ -134,7 +138,7 @@ body.dark-mode .header-inner {
 
 /* Nút tròn */
 .slider::before {
-  content: '☀️'; /* Mặt trời mặc định */
+  content: '☀️';
   position: absolute;
   left: 3px;
   top: 2px;
@@ -150,7 +154,7 @@ body.dark-mode .header-inner {
 
 /* Khi bật dark mode */
 .toggle input:checked + .slider {
-  background: #555; /* nền xám đậm */
+  background: #555;
 }
 
 /* Nút tròn di chuyển sang phải + đổi thành mặt trăng */
@@ -217,8 +221,6 @@ body.dark-mode .toggle input:checked + .slider {
 }
 
 /* Cards list */
-.content{
-}
 .cards{
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -325,6 +327,7 @@ body.dark-mode .site-footer{border-top-color: rgba(255,255,255,0.03)}
   .main-grid{grid-template-columns:1fr; padding:16px 0}
   .sidebar{position:static}
 }
+
 /* --- Đẩy sidebar sát mép trái --- */
 .main-grid {
   grid-template-columns: 280px 1fr;
@@ -342,56 +345,3 @@ body.dark-mode .site-footer{border-top-color: rgba(255,255,255,0.03)}
   padding-left: 28px;
   padding-right: 28px;
 }
-/* ========================
-   FIX RESPONSIVE MOBILE
-======================== */
-@media (max-width: 768px) {
-
-  /* Giảm kích thước logo và canh giữa header */
-  .header-inner {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 16px;
-  }
-
-  .logo img {
-    width: 130px;
-    height: auto;
-  }
-
-  .toggle {
-    margin-top: 8px;
-  }
-
-  /* Giảm padding container để không tràn màn hình */
-  .container {
-    width: 100%;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  /* Main grid 1 cột, bỏ sticky */
-  .main-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 16px 0 40px;
-  }
-
-  .sidebar {
-    position: static;
-    width: 100%;
-  }
-
-  .cards {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  }
-
-  /* Giới hạn chiều rộng modal trên mobile */
-  .modal-content {
-    width: 95%;
-    padding: 16px;
-  }
-
-}
-
