@@ -3600,7 +3600,7 @@ function createCard(dish) {
 function renderCards(list) {
   cardsContainer.innerHTML = '';
   if (list.length === 0) {
-    cardsContainer.innerHTML = `<div style="padding:40px;text-align:center;color:var(--muted)">Không có món phù hợp.</div>`;
+    cardsContainer.innerHTML = `<div style="padding:40px;text-align:center;color:var(--muted)">Không có món nào phù hợp. Hãy thử lại nhé!</div>`;
     return;
   }
   const frag = document.createDocumentFragment();
