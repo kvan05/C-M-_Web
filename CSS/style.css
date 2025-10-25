@@ -11,7 +11,6 @@
   --max-width: 1100px;
 }
 
-/* Dark mode variables (applied when body.dark-mode) */
 body.dark-mode{
   --bg: #0b1220;
   --card-bg: #0f1724;
@@ -58,7 +57,7 @@ body.dark-mode .site-header {
 /* Nội dung bên trong header */
 .header-inner {
   display: flex;
-  justify-content: space-between; /* vẫn giữ hai đầu */
+  justify-content: space-between; 
   align-items: center;
   width: 100%;
   padding: 40px 40px;
@@ -69,7 +68,6 @@ body.dark-mode .site-header {
   z-index: 2;
 }
 
-/* --- Canh logo giữa header --- */
 .header-inner {
   position: relative;
 }
@@ -112,7 +110,6 @@ body.dark-mode .site-header {
 }
 
 /* Toggle */
-/* Toggle container */
 .toggle {
   position: relative;
   display: inline-block;
@@ -120,7 +117,7 @@ body.dark-mode .site-header {
   height: 28px;
 }
 
-/* Ẩn checkbox thật */
+/* Ẩn checkbox */
 .toggle input {
   display: none;
 }
