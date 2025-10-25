@@ -342,3 +342,88 @@ body.dark-mode .site-footer{border-top-color: rgba(255,255,255,0.03)}
   padding-left: 28px;
   padding-right: 28px;
 }
+/* --- Responsive sidebar & search --- */
+@media (max-width: 880px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    padding: 16px 0;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  /* Search box full width */
+  .search-box input {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Category list hiển thị 2 cột nhỏ */
+  .category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+  }
+
+  .category-item {
+    font-size: 14px;
+  }
+
+  /* Thu nhỏ card */
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+  }
+
+  .card img {
+    height: 130px;
+  }
+
+  .card-body {
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .card-sub {
+    font-size: 12px;
+  }
+}
+
+/*----(mobile <600px) --- */
+@media (max-width: 600px) {
+  .sidebar {
+    padding: 12px;
+  }
+
+  .search-box h3,
+  .filters h3 {
+    font-size: 15px;
+  }
+
+  .category-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-box input {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .card img {
+    height: 120px;
+  }
+
+  .card-title {
+    font-size: 14px;
+  }
+}
